@@ -8,7 +8,7 @@ const Card = ({
   product,
   showViewProductButton = true,
   showAddToCartButton = true,
-  cartUpdate = false,
+  cartUpdate = false,  //product quantity update
   showRemoveProductButton = false,
   setRun = f => f,
   run = undefined
@@ -28,6 +28,7 @@ const Card = ({
   };
   const addToCart = () => {
     // console.log('added');
+    //second argument: a call back function
     addItem(product, setRedirect(true));
   };
 

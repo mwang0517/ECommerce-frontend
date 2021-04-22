@@ -1,15 +1,16 @@
+//next is the callback function
 export const addItem = (item = [], count = 0, next = f => f) => {
     let cart = [];
     if (typeof window !== 'undefined') {
         if (localStorage.getItem('cart')) {
-            cart = JSON.parse(localStorage.getItem('cart'));
+            cart = JSON.parse(localStorage.getItem('cart')); //JSON.parse() convert JSON to object, JSON.stringify() convert object to JSON
         }
         cart.push({
             ...item,
-            count: 1
+            count: 1 //by default it is always 1
         });
 
-        // remove duplicates
+        // remove duplicates(make sure no duplicate product, only update the count)
         // build an Array from new Set and turn it back into array using Array.from
         // so that later we can re-map it
         // new set will only allow unique values in it
